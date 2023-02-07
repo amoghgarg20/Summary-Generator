@@ -1,0 +1,47 @@
+# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+
+# model dependencies
+
+#server dependencies
+/server/__pycache__
+/server/include
+/server/lib64
+/server/bin
+/server/pyvenv.cfg
+/server/lib
+/server/models/model
+/server/models/__pycache__
+/server/nltk_data
+
+# client dependencies
+/client/node_modules
+/.pnp
+.pnp.js
+
+# testing
+/client/coverage
+
+# next.js
+/client/.next/
+/client/out/
+
+# production
+/build
+
+# misc
+.DS_Store
+*.pem
+
+# debug
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# local env files
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# vercel
+.vercel

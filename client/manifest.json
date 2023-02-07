@@ -1,0 +1,17 @@
+{
+  "name": "Summarizer",
+  "description": "Extension for summarizing online meetings!",
+  "version": "1.0",
+  "manifest_version": 3,
+  "permissions": ["storage", "tabs", "scripting"],
+  "action": {
+      "default_popup": "popup.html"
+  },
+  "background" : {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [{
+    "matches": ["<all_urls>"],
+    "js": ["script.js", "socket.io.js"]
+  }]
+}
