@@ -1,4 +1,6 @@
 from flask import Flask
+import sys
+sys.path.append('C:/Users/AMOGH GARG/AppData/Roaming/Python/Python310/site-packages')
 from flask_socketio import SocketIO, emit
 from flask_cors import CORS
 from models.speech2text import SpeechToText

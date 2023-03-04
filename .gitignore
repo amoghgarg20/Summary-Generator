@@ -12,6 +12,10 @@
 /server/models/model
 /server/models/__pycache__
 /server/nltk_data
+/server/env
+/server/audio.wav
+/server/input.txt
+/server/video.webm
 
 # client dependencies
 /client/node_modules
