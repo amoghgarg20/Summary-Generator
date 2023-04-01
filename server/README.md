@@ -1,4 +1,4 @@
-## Instructions to setup the server
+## Instructions to setup the server and client
 
 1. Add [Vosk Speech2Text](https://alphacephei.com/vosk/models/vosk-model-en-in-0.4.zip) model to 
 ```
@@ -23,6 +23,10 @@ python dep.py
 ```
 flask run
 ```
+6. To setup the client, go to your preferred web browser and under `Manage Extensions` turn on the `Developer Mode`.
+
+7. Then from the `Load Unpacked` option upload the `client` directory and then the extension will be added to the browser.   
+
 <b> Note : </b> -> Remember to run the server before starting client.
 
 -> While selecting a media stream, choose a tab since audio can only be recorded through a tab (MediaRecorder API restrictions)
