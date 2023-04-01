@@ -20,5 +20,14 @@ The objective of this project is to develop an NLP system that can automatically
 <li>HUGGING FACE INFERENCE API</li>
 <li>EXTRACTIVE SUMMARIZATION - Frequency based approach and TextRank Algorithm</li>
 
+## DATA FLOW DIAGRAM
+<p float="left">
+    <img src="resources/DFD.jpg/" width="100%" />
+</p>
+
+<b> For more details refer to the documentation provided in the `resources` directory.</b>
+
+<b> In order to setup the system on your local computer, refer to `README.md` in the `server` directory.</b>
+
 
 
