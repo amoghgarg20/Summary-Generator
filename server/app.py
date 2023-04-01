@@ -5,10 +5,12 @@ from flask_socketio import SocketIO, emit
 from flask_cors import CORS
 from models.speech2text import SpeechToText
 from models.summary import generate_summary
+from models.summary_text_rank import summarize
 import base64
 import os
 import subprocess
 import time
+
 
 app = Flask(__name__)
 socketio = SocketIO(app, cors_allowed_origins="*")
@@ -42,6 +44,10 @@ def summary():
     print("****************generating sumary****************")
     
     tcs_sum = generate_summary("input.txt")
+    # f = open('input.txt','r',encoding='utf-8')
+    # article_content=f.read().replace('\n','')
+    # f.close()
+    # tcs_sum = summarize(article_content)
     print(tcs_sum)
     
     return { "response": tcs_sum }

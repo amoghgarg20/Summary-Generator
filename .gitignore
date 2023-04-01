@@ -16,6 +16,7 @@
 /server/audio.wav
 /server/input.txt
 /server/video.webm
+/server/models/glove.6B.100d.txt
 
 # client dependencies
 /client/node_modules

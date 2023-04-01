@@ -35,12 +35,12 @@ def _calculate_sentence_scores(sentences, frequency_table) -> dict:
         for word_weight in frequency_table:
             if word_weight in sentence.lower():
                 sentence_wordcount_without_stop_words += 1
-                if sentence[:4] in sentence_weight:
-                    sentence_weight[sentence[:4]] += frequency_table[word_weight]
+                if sentence[:] in sentence_weight:
+                    sentence_weight[sentence[:]] += frequency_table[word_weight]
                 else:
-                    sentence_weight[sentence[:4]] = frequency_table[word_weight]
+                    sentence_weight[sentence[:]] = frequency_table[word_weight]
 
-        sentence_weight[sentence[:4]] = sentence_weight[sentence[:4]] / sentence_wordcount_without_stop_words
+        sentence_weight[sentence[:]] = sentence_weight[sentence[:]] / sentence_wordcount_without_stop_words
 
        
 
@@ -63,7 +63,7 @@ def _get_article_summary(sentences, sentence_weight, threshold):
     article_summary = ''
 
     for sentence in sentences:
-        if sentence[:4] in sentence_weight and sentence_weight[sentence[:4]] >= (1.25*threshold):
+        if sentence[:] in sentence_weight and sentence_weight[sentence[:]] >= (threshold):
             article_summary += " " + sentence
             sentence_counter += 1
 
@@ -95,3 +95,6 @@ def generate_summary(path):
     summary_results = _run_article_summary(article_content2)
 
     return summary_results
+
+#ans = generate_summary('D:/NLP Project/Summary-Generator/server/models/test_input.txt')
+#print(ans)
