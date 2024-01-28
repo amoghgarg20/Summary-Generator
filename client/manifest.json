@@ -1,17 +1,19 @@
 {
-  "name": "Summarizer",
-  "description": "Extension for summarizing online meetings!",
-  "version": "1.0",
+  "name": "Vidsum",
+  "description": "Textual summarization online meetings, webinars and videos!",
+  "version": "2.0",
   "manifest_version": 3,
   "permissions": ["storage", "tabs", "scripting"],
   "action": {
-      "default_popup": "popup.html"
+    "default_popup": "popup.html"
   },
-  "background" : {
+  "background": {
     "service_worker": "background.js"
   },
-  "content_scripts": [{
-    "matches": ["<all_urls>"],
-    "js": ["script.js", "socket.io.js"]
-  }]
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["script.js", "socket.io.js"]
+    }
+  ]
 }

@@ -43,11 +43,11 @@ def summary():
     print(tcs)
     print("****************generating sumary****************")
     
-    tcs_sum = generate_summary("input.txt")
-    # f = open('input.txt','r',encoding='utf-8')
-    # article_content=f.read().replace('\n','')
-    # f.close()
-    # tcs_sum = summarize(article_content)
+    # tcs_sum = generate_summary("input.txt")
+    f = open('input.txt','r',encoding='utf-8')
+    article_content=f.read().replace('\n','')
+    f.close()
+    tcs_sum = summarize(article_content)
     print(tcs_sum)
     
     return { "response": tcs_sum }
