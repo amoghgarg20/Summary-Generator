@@ -78,6 +78,12 @@ chrome.runtime.onConnect.addListener(function (port) {
         .catch((err) => {
           console.log(err);
         });
+    } else if (message.message === "generateSummary") {
+      var socket = io.connect("http://localhost:5000/");
+      socket.emit("getSummary", "Send summary");
+      socket.on("summary", function (res) {
+        console.log("Summary received: " + res);
+      });
     }
   });
 });

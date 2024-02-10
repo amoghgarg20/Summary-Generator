@@ -12,15 +12,35 @@ chrome.storage.sync.get(["recordStatus"], function (result) {
   }
 });
 
+// async function fetchSummary() {
+//   chrome.storage.sync.set({ recordStatus: false });
+//   fetch("http://localhost:5000/summary")
+//     .then((res) => {
+//       console.log(res);
+//     })
+//     .catch((err) => {
+//       console.log(err);
+//     });
+//   port.postMessage({ message: "generateSummary" });
+// }
+
 async function fetchSummary() {
   chrome.storage.sync.set({ recordStatus: false });
   fetch("http://localhost:5000/summary")
     .then((res) => {
-      console.log(res);
+      if (res.ok) {
+        return res.json(); // Assuming the response is JSON
+      } else {
+        throw new Error("Failed to fetch summary");
+      }
+    })
+    .then((data) => {
+      console.log("Summary received:", data.response); // Logging the summary data
     })
     .catch((err) => {
-      console.log(err);
+      console.error(err);
     });
+  port.postMessage({ message: "generateSummary" });
 }
 
 async function startRecording() {

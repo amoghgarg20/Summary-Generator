@@ -29,7 +29,9 @@ def index():
         print("The file does not exist")
     return { "response": True }
 
+
 @app.route('/summary')
+@socketio.on('getSummary')
 def summary():
     print('request')
     subprocess.call(
@@ -48,8 +50,8 @@ def summary():
     article_content=f.read().replace('\n','')
     f.close()
     tcs_sum = summarize(article_content)
-    print(tcs_sum)
-    
+    print("Summary: ", tcs_sum)
+    socketio.emit("summary", tcs_sum)
     return { "response": tcs_sum }
 
 @socketio.on('connect')
